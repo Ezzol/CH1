@@ -1,0 +1,156 @@
+/* Kleuren die ik gebruik:
+Donkerblauw: #141A28
+Blauw: #1E2B3F
+Lichtblauw: #2373F2
+Paars: #C04FFA
+Geel: #FFE451
+Groen: #00CF96
+Donkere tekst: #8896AA
+*/
+
+/* ------------------------------------------------------------------- */
+/* --------------------main content box properties-------------------- */
+/* ------------------------------------------------------------------- */
+
+/* De opmaak van alles in de html en body */
+html, body{
+    margin: 0;
+    padding: 0;
+}
+
+/* De opmaak van de header van de pagina */
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    height: 60px;
+    top: 0;
+    background-color: #141A28;
+    border-bottom: 2px solid #C04FFA;
+}
+
+/* De hoogte van het logo in de header */
+header img{
+    height: 40px;
+}
+
+/* de opmaak, vooral van de achtergrond, van de body */
+body{
+    background-image: url("img/BGimage.svg");
+    background-repeat: no-repeat;
+    background-color: #141A28;
+    background-attachment: fixed;
+    background-size: cover;
+    color: white;
+    min-height: 100vh;
+}
+
+/* De positionering van de blokken op de pagina */
+main{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 0 30px;
+    justify-content: space-between;
+}
+
+/* ------------------------------------------------------------------- */
+/* --------------------datavisualisatie properties-------------------- */
+/* ------------------------------------------------------------------- */
+
+/* Dit zijn de properties van de box waarin de datavisualisaties zitten */
+.chartWrapper{
+    background-color: #1E2B3F;
+    margin: 15px 0;
+    border-radius: 8px;
+    padding-top: 20px;
+    width: 100%;
+}
+
+/* Specifieke breedte van de eerste container waarin de raket animatie zit */
+.firstvisual{
+    width: 100%;
+}
+
+/* het blok waarin de wereldbol, mars, de stippellijn en de raket zitten */
+#rocketcontainer{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    align-items: center;
+}
+
+/* Het formaat van de wereldbol en mars */
+.globe{
+    width: 50px;
+    min-width: 50px;
+}
+
+/* Dit is de box waarin de stippellijn zit, waarover de raket heengaat */
+#dashedline{
+    display: flex;
+    margin: auto 0;
+    position: absolute;
+    left: 60px;
+    right: 60px;
+}
+
+/* Dit is de opmaak van de stippellijn */
+#line{
+    border: 1px dashed white;  
+    width: 100%;
+}
+
+/* De box waarin de bewegende raket zit */
+#flyingrocket{
+    position: absolute;
+    left: 60px;
+    right: 60px;
+}
+
+/* Dit is de raket met de animatie */
+#rocket{
+    width: 25px;
+    animation: raketvlucht 120s linear infinite;
+}
+
+/* Keyframes voor de raket zodat deze weet hoe hij van a naar b moet en waar dit is */
+@keyframes raketvlucht{
+    0%{margin-left: 0%;}
+    100%{margin-left: calc(100% - 20px)};
+}
+
+.voedselvoorraadchart{
+    margin: 10px;
+}
+
+
+
+/* ------------------------------------------------------------------- */
+/* ------------------------Media Query Tablet------------------------- */
+/* ------------------------------------------------------------------- */
+
+/* tablet versie */
+@media only screen and (min-width: 992px) {
+    main{
+        flex-direction: row;
+    }
+
+    .chartWrapper{
+        width: calc(50% - 15px);
+    }
+
+    .firstvisual{
+        width: 100%;
+    }
+}
+
+
+
+
+
+
+/* .chartwrapper{
+    width: calc(50% - 15px);
+} */

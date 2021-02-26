@@ -10,20 +10,56 @@
         <!-- Viewport is het totale browserscherm dat getoond wordt -->
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <!-- linkje naar externe css voor opmaak van het document -->
-        <link rel="stylesheet" type="text/css" href="index.css" />
-        <!-- Titel van deze website -->
+        <link rel="stylesheet" type="text/css" href="styles.css" />
+        <!-- Linkje naar externe JavaScript voor de interactie van het document. Defer zorgt ervoor dat de code pas geladen wordt als al het andere al geladen is -->
+        <script src="script.js" defer></script>
+        <!-- Link naar de data van chart.js -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js" integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw==" crossorigin="anonymous"></script>
+         <!-- Titel van deze website -->
         <title>SpaceX Dashboard Challenge 1</title>
     </head>
 
     <body>
         <header>
-
+            <img src="img/SpaceXlogo1.png" alt="Logo van SpaceX met de tekst Space X in het wit met een paarse x. Daaronder staat in het paars het woord dashboard. SpaceX Dashboard." />
         </header>
         <main>
+            <section class="chartWrapper firstvisual">
+                <!-- Hier komt de voortgang van de reis -->
+                <h2>Voortgang reis</h2>
+                <div id="rocketcontainer"> <!-- dit moet ik zelf animeren in css -->
+                    <!-- wereldbolletje-->
+                    <div>
+                        <img src="img/world.svg" class="globe"/>
+                    </div>
 
+                    <!-- stippellijntje-->
+                    <div id="dashedline">
+                        <div id="line"></div>
+                    </div>
+
+                    <!-- raketje-->
+                    <div id="flyingrocket">
+                        <img src="img/rocket.svg" id="rocket"/>
+                    </div>
+                    
+                    <!-- mars-->
+                    <div class="mars">
+                        <img src="img/mars.svg" class="globe"/>
+                    </div>
+                </div>
+            </section>
+            <section class="chartWrapper">
+                <!-- Hier komt de voedselvoorraad API -->
+                <canvas id="voedselVoorraadChart"></canvas>
+            </section>
+            <section class="chartWrapper">
+                <!-- hier komt het aantal mensen aan boord API -->
+                <canvas id="aantalMensenChart"></canvas>
+            </section>
         </main>
         <footer>
-            
+            <!-- <img src="img/SpaceXlogo2.png" alt="Logo van SpaceX met de tekst Space C in het wit met een paarse x." /> -->
         </footer>
     </body>
 </html>
