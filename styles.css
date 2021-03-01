@@ -125,13 +125,13 @@ main{
     justify-content: center;
     position: relative;
     overflow: visible;
-    /* animation: raketvlucht 120s linear infinite; */
 }
 
 #rocket img{
     width: 25px;
 }
 
+/* De plaatsing van de hovertekst onder de raket die vertelt op welke dag je zit */
 .hoverTextRocket{
     position: absolute;
     right: 0;
@@ -144,25 +144,11 @@ main{
     transition-property: opacity;
 }
 
-
+/* Het zichtbaar worden van de hovertekst zodra je er overheen hovert */
 #rocket:hover .hoverTextRocket{
     pointer-events: visible;
     opacity: 1;
 }
-
-
-
-
-/* Keyframes voor de raket zodat deze weet hoe hij van a naar b moet en waar dit is */
-/* @keyframes raketvlucht{
-    0%{margin-left: 0%;}
-    100%{margin-left: calc(100% - 20px)};
-}
-
-.voedselVoorraadChart{
-    margin: 10px; 
-} */
-
 
 
 /* ------------------------------------------------------------------- */
