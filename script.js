@@ -25,16 +25,21 @@ document.getElementById('vandaagDeDag').innerHTML = daysOnTheMove;
 var ctx = document.getElementById('voedselVoorraadChart').getContext('2d');
 var chart = new Chart(ctx, {
     // The type of chart we want to create
-    type: 'doughnut',
+    type: 'pie',
 
     // The data for our dataset
     data: {
         labels: ['Pizza', 'Soep', 'Bonenmix', 'Havermout'],
         datasets: [{
             label: 'My First dataset',
-            backgroundColor: 'rgb(255, 99, 132)',
-            borderColor: 'rgb(255, 99, 132)',
-            data: [40, 25, 10, 25]
+            backgroundColor: [
+                '#2373F2',
+                '#C04FFA',
+                '#FFE451',
+                '#00CF96'],
+            borderColor: '#fff',
+            data: [40, 25, 10, 25],
+            borderWidth: '0'
         }]
     },
 
