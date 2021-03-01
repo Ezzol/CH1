@@ -99,10 +99,12 @@ main{
     right: 60px;
 }
 
-/* Dit is de opmaak van de stippellijn */
+/* Dit is de opmaak van de stippellijn. Ik had eerst een border solid 1px, maar ik wilde de spacing veranderen tussen de streepjes, en dat kon niet zomaar. Ik heb het daarom opgelost door een background te gebruiken van 1px hoogte.  */
 #line{
-    border: 1px dashed white;  
     width: 100%;
+    background-image: linear-gradient(to right, #4c5973 30%, rgba(255, 255, 255, 0) 0%);
+    background-size: 20px 3px;
+    height: 1px;
 }
 
 /* De box waarin de bewegende raket zit */
@@ -135,12 +137,12 @@ main{
 .hoverTextRocket{
     position: absolute;
     right: 0;
-    left: 0;
-    bottom: -50px;
+    left: -15px;
+    bottom: -35px;
     white-space: nowrap;
     pointer-events: none;
     opacity: 0;
-    transition: 300ms ease-in-out;
+    transition: 150ms ease-in-out;
     transition-property: opacity;
 }
 
