@@ -30,7 +30,7 @@
                 <div id="rocketcontainer"> <!-- dit moet ik zelf animeren in css -->
                     <!-- wereldbolletje-->
                     <div>
-                        <img src="img/world.svg" class="globe"/>
+                        <img src="img/world.svg" class="globe" alt="Plaatje van de wereldbol"/>
                     </div>
 
                     <!-- stippellijntje-->
@@ -40,12 +40,17 @@
 
                     <!-- raketje-->
                     <div id="flyingrocket">
-                        <img src="img/rocket.svg" id="rocket"/>
+                        <div id="rocketWrapper">
+                            <div id="rocket">
+                                <img src="img/rocket.svg" alt="Plaatje van een raket"/>
+                                <p class="hoverTextRocket">Dag <span id="vandaagDeDag">1</span></p>
+                            </div>
+                        </div>
                     </div>
                     
                     <!-- mars-->
                     <div class="mars">
-                        <img src="img/mars.svg" class="globe"/>
+                        <img src="img/mars.svg" class="globe" alt="Plaatje van de planeet mars"/>
                     </div>
                 </div>
             </section>

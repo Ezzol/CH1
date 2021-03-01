@@ -16,6 +16,7 @@ Donkere tekst: #8896AA
 html, body{
     margin: 0;
     padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 /* De opmaak van de header van de pagina */
@@ -28,6 +29,7 @@ header{
     top: 0;
     background-color: #141A28;
     border-bottom: 2px solid #C04FFA;
+    z-index: 2;
 }
 
 /* De hoogte van het logo in de header */
@@ -64,7 +66,7 @@ main{
     background-color: #1E2B3F;
     margin: 15px 0;
     border-radius: 8px;
-    padding-top: 20px;
+    /* padding-top: 20px; */
     width: 100%;
 }
 
@@ -79,6 +81,7 @@ main{
     justify-content: space-between;
     position: relative;
     align-items: center;
+    margin: 20px;
 }
 
 /* Het formaat van de wereldbol en mars */
@@ -109,21 +112,56 @@ main{
     right: 60px;
 }
 
-/* Dit is de raket met de animatie */
-#rocket{
-    width: 25px;
-    animation: raketvlucht 120s linear infinite;
+#rocketWrapper{
+    display: flex;
+    justify-content: flex-end;
 }
 
+#rocket{
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: visible;
+    /* animation: raketvlucht 120s linear infinite; */
+}
+
+#rocket img{
+    width: 25px;
+}
+
+.hoverTextRocket{
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: -50px;
+    white-space: nowrap;
+    pointer-events: none;
+    opacity: 0;
+    transition: 300ms ease-in-out;
+    transition-property: opacity;
+}
+
+
+#rocket:hover .hoverTextRocket{
+    pointer-events: visible;
+    opacity: 1;
+}
+
+
+
+
 /* Keyframes voor de raket zodat deze weet hoe hij van a naar b moet en waar dit is */
-@keyframes raketvlucht{
+/* @keyframes raketvlucht{
     0%{margin-left: 0%;}
     100%{margin-left: calc(100% - 20px)};
 }
 
-.voedselvoorraadchart{
-    margin: 10px;
-}
+.voedselVoorraadChart{
+    margin: 10px; 
+} */
 
 
 
