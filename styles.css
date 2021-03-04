@@ -58,6 +58,27 @@ main{
     justify-content: space-between;
 }
 
+/* hierin zit het logo van spaceX nog een keer */
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0;
+}
+
+/* De reden voor de padding links is om het optisch gecentreerd te houden van de image. */
+footer img{
+    height: 30px;
+    padding-left: 30px;
+}
+
+/* De opmaak van header 2 */
+h2{
+    padding-left: 20px;
+    font-size: 1.2em;
+}
+
+
 /* ------------------------------------------------------------------- */
 /* --------------------datavisualisatie properties-------------------- */
 /* ------------------------------------------------------------------- */
@@ -87,8 +108,8 @@ main{
 
 /* Het formaat van de wereldbol en mars */
 .globe{
-    width: 50px;
-    min-width: 50px;
+    width: 30px;
+    min-width: 30px;
 }
 
 /* Dit is de box waarin de stippellijn zit, waarover de raket heengaat */
@@ -96,8 +117,8 @@ main{
     display: flex;
     margin: auto 0;
     position: absolute;
-    left: 60px;
-    right: 60px;
+    left: 40px;
+    right: 40px;
 }
 
 /* Dit is de opmaak van de stippellijn. Ik had eerst een border solid 1px, maar ik wilde de spacing veranderen tussen de streepjes, en dat kon niet zomaar. Ik heb het daarom opgelost door een background te gebruiken van 1px hoogte.  */
@@ -111,15 +132,17 @@ main{
 /* De box waarin de bewegende raket zit */
 #flyingrocket{
     position: absolute;
-    left: 60px;
-    right: 60px;
+    left: 40px;
+    right: 40px;
 }
 
+/* Deze container zit om de raket en de hover tekst heen */
 #rocketWrapper{
     display: flex;
     justify-content: flex-end;
 }
 
+/* Deze container bevat de raket en de hover tekst */
 #rocket{
     width: 25px;
     height: 25px;
@@ -130,11 +153,12 @@ main{
     overflow: visible;
 }
 
+/* Dit is de breedte voor het raketje dat verplaatst over de stippellijn */
 #rocket img{
     width: 25px;
 }
 
-/* De plaatsing van de hovertekst onder de raket die vertelt op welke dag je zit */
+/* De plaatsing van de hovertekst onder de raket die vertelt op welke dag je zit. Negatieve px is niet heel chique maar ik wist niet hoe ikhet beter kon oplossen */
 .hoverTextRocket{
     position: absolute;
     right: 0;
@@ -153,29 +177,30 @@ main{
     opacity: 1;
 }
 
-h2{
-    padding-left: 20px;
-    font-size: 1.2em;
-}
-
+/* Dit geeft extra padding aan de onderkant van de twee diagrammen om het iets mooier te maken */
 #voedselVoorraadChart, #aantalMensenChart{
     padding-bottom: 20px;
 }
 
+
+
 /* ------------------------------------------------------------------- */
-/* ------------------------Media Query Tablet------------------------- */
+/* ---------------------Media Query Tablet Staand--------------------- */
 /* ------------------------------------------------------------------- */
 
 /* tablet versie */
 @media only screen and (min-width: 768px) {
+   /* Bij een breder scherm kan er meer data naast elkaar worden neergezet. De blokken staan dan ook niet meer onder elkaar, maar naast elkaar */
     main{
         flex-direction: row;
     }
 
+    /* De blokken voor de diagrammen delen elk de helft van het scherm naast elkaar */
     .chartWrapper{
         width: calc(50% - 15px);
     }
 
+    /* De raket moet bij het schalen altijd de volledigge breedte krijgen */
     .firstvisual{
         width: 100%;
     }
@@ -183,11 +208,13 @@ h2{
 
 
 
-
-
+/* ------------------------------------------------------------------- */
+/* --------------------Media Query Tablet Liggend--------------------- */
+/* ------------------------------------------------------------------- */
 
 /* tablet liggend versie */
 @media only screen and (min-width: 1024px) {
+    /* Ik probeerde hier om de twee blokken van de staafdiagram en cirkeldiaggram te veranderen qua breedte, maar de blokken gingen heel vreemd doen helaas.
     /* #foodGraph{
         flex-grow: 1;
     }
@@ -195,21 +222,46 @@ h2{
     #populationGraph{
         flex-grow: 2;
     } */
+
+    /* Het formaat van de wereldbol en mars wordt iets groter hier */
+    .globe{
+        width: 50px;
+        min-width: 50px;
+    }
+
+    /* De stippellijn moet iets verder van de zijkanten af om niet over de wereldbollen heen te gaan */
+    #dashedline{
+        left: 60px;
+        right: 60px;
+    }
+
+    /* De box waarin de bewegende raket zit is nu ook iets verder van de zijkanten verwijderd */
+    #flyingrocket{
+        left: 60px;
+        right: 60px;
+    }
 }
 
 
 
-
-
+/* ------------------------------------------------------------------- */
+/* ------------------------Media Query Desktop------------------------ */
+/* ------------------------------------------------------------------- */
 
 /* desktop versie */
 @media only screen and (min-width: 1440px) {
+    /* De titels van de blokken zijn qua tekstgrootte iets groter omdat het beeld ook groter is */
+    h2{
+        font-size: 1.5em;
+    }
+
+    /* Het logo in de footer mag op desktop formaat best wat prominenter in beeld */
+    footer img{
+        height: 60px;
+    }
+
+    /* Op een gegeven moment wordt je scherm zo breed dat het onoverzichtelijk wordt. Daarom meer margin aan de zijkanten om het niet zo uit te rekken */
+    main{
+        margin: 0 8%;
+    }
 }
-
-
-
-
-
-/* .chartwrapper{
-    width: calc(50% - 15px);
-} */

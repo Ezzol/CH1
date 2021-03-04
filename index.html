@@ -1,11 +1,11 @@
 <!-- dit beschrijft dat ik in html-5 werk -->
 <!DOCTYPE html>
-<!-- Dit zegt iets over de taal van de website -->
+<!-- Dit zegt iets over de taal van de website, namelijk Nederlands -->
 <html lang="nl">
 
     <!-- In de head sectie staat relevantie informatie die voor het gehele document geldt, zoals de titel, externe bestanden en de gebruikte tekenset -->
     <head>
-        <!-- textset utf-8, gelinkt naar de index css. Ook gelinkt naar het JavaScript bestand -->
+        <!-- textset utf-8 wordt gebruikt -->
         <meta charset="utf-8" />
         <!-- Viewport is het totale browserscherm dat getoond wordt -->
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -15,60 +15,79 @@
         <script src="script.js" defer></script>
         <!-- Link naar de data van chart.js -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js" integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw==" crossorigin="anonymous"></script>
-        <!-- Dit geeft een klein icoontje bovenin de browser weer :) -->
+        <!-- Dit geeft een klein favicoontje bovenin de browser weer :) -->
         <link rel="shortcut icon" type="image/jpg" href="img/rocket.svg"/>
         <!-- Titel van deze website -->
         <title>SpaceX Dashboard Challenge 1</title>
     </head>
 
+    <!-- In de body staat de header, de visuele data en de footer -->
     <body>
+        <!-- In de header staat een sticky bar met het logo van SpaceX -->
         <header>
+            <!-- Dit is de foto van het logo van SpaceX met een alternatieve tekst voor bijv. slechtzienden -->
             <img src="img/SpaceXlogo1.png" alt="Logo van SpaceX met de tekst Space X in het wit met een paarse x. Daaronder staat in het paars het woord dashboard. SpaceX Dashboard." />
         </header>
+        <!-- In de main staat het belangrijkste, namelijk de data visualisaties van SpaceX -->
         <main>
+            <!-- Deze sectie bevat het eerste blok, de raket die van aarde naar mars vliegt -->
             <section class="chartWrapper firstvisual">
-                <!-- Hier komt de voortgang van de reis -->
+                <!-- Dit is de titel van het blok -->
                 <h2>Voortgang reis</h2>
-                <div id="rocketcontainer"> <!-- dit moet ik zelf animeren in css -->
-                    <!-- wereldbolletje-->
+                <!-- Deze container bevat alles omtrent de raket en de planeten -->
+                <div id="rocketcontainer">
+                    <!-- Een container om het raketje heen-->
                     <div>
+                        <!-- De foto van het raketje dat d.m.v. JS verplaatst elke dag. Heeft een alternatieve tekst voor bijv. slechtzienden -->
                         <img src="img/world.svg" class="globe" alt="Plaatje van de wereldbol"/>
                     </div>
 
-                    <!-- stippellijntje-->
+                    <!-- Box voor het stippellijntje -->
                     <div id="dashedline">
+                        <!-- Het stippellijntje zelf -->
                         <div id="line"></div>
                     </div>
 
-                    <!-- raketje-->
+                    <!-- Container voor de raket en de hovertekst -->
                     <div id="flyingrocket">
+                        <!-- Een container om zowel de raket als de hovertekst heen -->
                         <div id="rocketWrapper">
+                            <!-- Nog een container voor de raket en de hovertekst. Op deze manier krijgt alles de juiste breedte -->
                             <div id="rocket">
-                                <img src="img/rocket.svg" alt="Plaatje van een raket"/>
+                                <!-- Dit is een plaatje van de raket met een alternatieve tekst voor bijv. slechtzienden -->
+                                <img src="img/rocket.svg" alt="Plaatje van een rood-witte raket"/>
+                                <!-- Deze tekst verschijnt zodra je over de raket hovert met je muis, of tikt op de raket vanaf je smartphone -->
                                 <p class="hoverTextRocket">Dag <span id="vandaagDeDag">1</span></p>
                             </div>
                         </div>
                     </div>
                     
-                    <!-- mars-->
+                    <!-- De container die om de planeet mars heen staat -->
                     <div class="mars">
-                        <img src="img/mars.svg" class="globe" alt="Plaatje van de planeet mars"/>
+                        <!-- Een plaatje van de planeet mars met een alternatieve tekst voor bijv. slechtzienden -->
+                        <img src="img/mars.svg" class="globe" alt="Vectorplaatje van de rode planeet mars"/>
                     </div>
                 </div>
             </section>
+            <!-- Dit is de container voor de voedselvoorraad datavisualisatie -->
             <section class="chartWrapper" id="foodGraph">
+                <!-- Een titel voor het blok -->
                 <h2>Voedselvoorraad</h2>
-                <!-- Hier komt de voedselvoorraad API -->
+                <!-- Dit canvas bevat de voedselvoorraad cirkeldiagram die via (externe) JS wordt opgemaakt -->
                 <canvas id="voedselVoorraadChart"></canvas>
             </section>
+            <!-- Dit is de container voor de populatie datavisualisatie-->
             <section class="chartWrapper" id="populationGraph">
+                <!-- Een titel voor het blok -->
                 <h2>Populatie</h2>
-                <!-- hier komt het aantal mensen aan boord API -->
+                <!-- Dit canvas bevat de populatie staafdiagram die via (externe) JS wordt opgemaakt -->
                 <canvas id="aantalMensenChart"></canvas>
             </section>
         </main>
+        <!-- De footer die het logo van SpaceX nog een keer bevat -->
         <footer>
-            <!-- <img src="img/SpaceXlogo2.png" alt="Logo van SpaceX met de tekst Space C in het wit met een paarse x." /> -->
+            <!-- Dit is het logo van SpaceX met een alternatieve tekst voor bijv. slechtzienden -->
+            <img src="img/SpaceXlogo2.png" alt="Logo van SpaceX met de tekst Space in het wit met een paarse x." id="footerlogo"/>
         </footer>
     </body>
 </html>

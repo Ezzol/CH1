@@ -19,8 +19,6 @@ document.getElementById('vandaagDeDag').innerHTML = daysOnTheMove;
 
 
 
-
-
 // Chart voor eten
 var ctx = document.getElementById('voedselVoorraadChart').getContext('2d');
 var chart = new Chart(ctx, {
@@ -31,7 +29,7 @@ var chart = new Chart(ctx, {
     data: {
         labels: ['Pizza', 'Soep', 'Bonenmix', 'Havermout'],
         datasets: [{
-            label: 'My First dataset',
+            label: 'Voedselvoorraad',
             backgroundColor: [
                 '#2373F2',
                 '#C04FFA',
@@ -58,40 +56,25 @@ var chart = new Chart(ctx, {
 
 
 
-
-// var voedselvoorraadChart = new Chart(ctx, {
-//     type: 'doughnut',
-//     data: data,
-//     options: {
-//         legend: {
-//             display: false
-//         }
-//     }
-// });
-
-
-
-
-
-// link naar code: https://jsfiddle.net/cmyker/ooxdL2vj/
-
-
-
 // De functie die het aantal mensen laat zien 
-
-  var ctx2 = document.getElementById('aantalMensenChart').getContext('2d');
+var ctx2 = document.getElementById('aantalMensenChart').getContext('2d');
 var chart2 = new Chart(ctx2, {
     // The type of chart we want to create
     type: 'bar',
 
     // The data for our dataset
     data: {
-        labels: ['Pizza', 'Soep', 'Bonenmix', 'Havermout'],
+        labels: ['vrouw 18+', 'man 18+', 'meisje 18-', 'jongen 18-'],
         datasets: [{
-            label: 'My First dataset',
-            backgroundColor: 'rgb(255, 99, 132)',
+            label: 'Populatie',
+            backgroundColor: [
+                '#2373F2',
+                '#C04FFA',
+                '#FFE451',
+                '#00CF96'],
             borderColor: 'rgb(255, 99, 132)',
-            data: [40, 25, 10, 25]
+            data: [18, 22, 9, 14],
+            barThickness: 8,
         }]
     },
 
