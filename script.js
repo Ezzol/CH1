@@ -37,14 +37,22 @@ var chart = new Chart(ctx, {
                 '#C04FFA',
                 '#FFE451',
                 '#00CF96'],
-            borderColor: '#fff',
+            borderColor: '#1E2B3F',
             data: [40, 25, 10, 25],
             borderWidth: '0'
         }]
     },
 
     // Configuration options go here
-    options: {}
+    options: {
+        // legend: {
+        //     position: 'top',
+        //     align: 'start'
+        // }
+        layout: {
+            padding: 20
+        }
+    }
 });
 
 
@@ -88,5 +96,9 @@ var chart2 = new Chart(ctx2, {
     },
 
     // Configuration options go here
-    options: {}
+    options: {
+        layout: {
+            padding: 20
+        }
+    }
 });

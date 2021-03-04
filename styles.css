@@ -153,13 +153,21 @@ main{
     opacity: 1;
 }
 
+h2{
+    padding-left: 20px;
+    font-size: 1.2em;
+}
+
+#voedselVoorraadChart, #aantalMensenChart{
+    padding-bottom: 20px;
+}
 
 /* ------------------------------------------------------------------- */
 /* ------------------------Media Query Tablet------------------------- */
 /* ------------------------------------------------------------------- */
 
 /* tablet versie */
-@media only screen and (min-width: 992px) {
+@media only screen and (min-width: 768px) {
     main{
         flex-direction: row;
     }
@@ -173,6 +181,30 @@ main{
     }
 }
 
+
+
+
+
+
+/* tablet liggend versie */
+@media only screen and (min-width: 1024px) {
+    /* #foodGraph{
+        flex-grow: 1;
+    }
+
+    #populationGraph{
+        flex-grow: 2;
+    } */
+}
+
+
+
+
+
+
+/* desktop versie */
+@media only screen and (min-width: 1440px) {
+}
 
 
 
